@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.github.fantasy0v0.mappers.TestMapper">
+  <resultMap id="StudentMap" type="com.github.fantasy0v0.record.Student" autoMapping="true" />
+  <select id="test" resultMap="StudentMap">
+    select  1 as id, 'test' as name;
+  </select>
+
+  <!--<resultMap id="StudentRecordMap" type="com.github.fantasy0v0.record.StudentRecord">
+    <constructor>
+      <arg column="id" javaType="_long"/>
+      <arg column="name" javaType="string"/>
+    </constructor>
+  </resultMap>-->
+  <resultMap id="StudentRecordMap" type="com.github.fantasy0v0.record.StudentRecord" autoMapping="true" />
+  <select id="testRecord" resultMap="StudentRecordMap">
+    select  1 as id, 'test' as name, '{"test": "123"}';
+  </select>
+</mapper>
